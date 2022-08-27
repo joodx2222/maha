@@ -20,7 +20,7 @@
     "popper.js": "1.14.3",
     "stripe": "^8.222.0",
     "webshot": "^0.18.0",
-    "graceful-fs": "4.2.2"
+    "graceful-fs": "3.0.12"
   },
   "meteor": {
     "mainModule": {

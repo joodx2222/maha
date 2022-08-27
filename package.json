@@ -1,0 +1,32 @@
+{
+  "name": "maha",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer --settings settings.json"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.18.9",
+    "apollo-server-express": "^2.26.0",
+    "bcrypt": "^3.0.0",
+    "graphql": "^14.5.8",
+    "gridfs-stream": "^1.1.1",
+    "gulp": "^4.0.2",
+    "jquery": "3.4.1",
+    "jsonwebtoken": "^8.5.1",
+    "meteor-node-stubs": "^0.4.1",
+    "popper.js": "1.14.3",
+    "stripe": "^8.222.0",
+    "webshot": "^0.18.0",
+    "graceful-fs": "4.2.2"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.js",
+      "server": "server/main.js"
+    },
+    "testModule": "tests/main.js"
+  }
+}

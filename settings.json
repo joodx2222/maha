@@ -1,0 +1,21 @@
+{
+  "public": {
+    "uploadType": "fileSystem"
+  },
+  "aws": {
+    "accessKeyId": "",
+    "secretAccessKey": ""
+  },
+  "awsS3": {
+    "region": "",
+    "bucket": ""
+  },
+  "stripe": {
+    "secretKey": ""
+  },
+  "paypal": {
+    "apiUrl": "https://api.sandbox.paypal.com",
+    "accessKeyId": "",
+    "secretAccessKey": ""
+  }
+}

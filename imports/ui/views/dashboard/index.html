@@ -1,9 +1,9 @@
 <template name="dashboard">
   <section class="content-header">
-    <h5 class="mb-0">Dashboard</h5>
+    <h5 class="mb-0">لوحة التحكم</h5>
     <ol class="breadcrumb">
       <li><a href="/"><i class="fa fa-home"></i></a></li>
-      <li class="active">Dashboard</li>
+      <li class="active">لوحة التحكم</li>
     </ol>
   </section>
   <section class="content" id="dashboardContent">
@@ -17,7 +17,7 @@
               </div>
             </div>
             <div class="p-12">
-              <span class="fs-16 text-black">Today's Order</span>
+              <span class="fs-16 text-black">طلبات اليوم</span>
     					<h4 class="font-18 mt-1 mb-0 text-black">{{todaysOrder}}</h4>
             </div>
           </div>
@@ -32,7 +32,7 @@
               </div>
             </div>
             <div class="p-12">
-              <span class="fs-16 text-black">This Month Order</span>
+              <span class="fs-16 text-black">طلبات الشهر</span>
     					<h4 class="font-18 mt-1 mb-0 text-black">{{monthOrder}}</h4>
             </div>
           </div>
@@ -47,7 +47,7 @@
               </div>
             </div>
             <div class="p-12">
-              <span class="fs-16 text-black">This Month Income</span>
+              <span class="fs-16 text-black">دخل الشهر</span>
     					<h4 class="font-18 mt-1 mb-0 text-black">{{monthIncome}}</h4>
             </div>
           </div>
@@ -57,7 +57,7 @@
         <div class="card py-4" id="deliveryLimitBox">
           <div class="">
             <a class="edit-limit text-black float-right" href="#"><i class="fa fa-pencil"></i></a>
-            <span class="fs-16 text-black">Free Order Delivery Limit</span>
+            <span class="fs-16 text-black">حد الطلب المجاني</span>
             <h4 class="font-18 mt-1 mb-0 text-black text-limit-value">${{deliveryLimit}}</h4>
           </div>
           <div class="edit-delivery-linit-box pt-2">
@@ -73,7 +73,7 @@
         <div class="card py-4" id="deliveryChargeBox">
           <div class="">
             <a class="edit-charge text-black float-right" href="#"><i class="fa fa-pencil"></i></a>
-            <span class="fs-16 text-black">Delivery Charge</span>
+            <span class="fs-16 text-black">رسوم التوصيل</span>
             <h4 class="font-18 mt-1 mb-0 text-black text-limit-value">${{deliveryCharge}}</h4>
           </div>
           <div class="edit-delivery-linit-box pt-2">

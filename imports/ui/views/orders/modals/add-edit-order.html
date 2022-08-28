@@ -8,15 +8,15 @@
             <form role="form" id="orderForm" class="pb-5">
               {{#with item}}
                 <div class="form-group">
-                  <label class="mb-0">User Name</label>
+                  <label class="mb-0">اسم المستخدم</label>
                   <div class="ml-1 fs-14">{{getUser.name}}</div>
                 </div>
                 <div class="form-group">
-                  <label class="mb-0">Delivery Address</label>
+                  <label class="mb-0">عنوان التوصيل</label>
                   <div class="fs-14 address-text">{{getDeliveryAddress}}</div>
                 </div>
                 <div class="form-group">
-                  <label class="mb-0">Date</label>
+                  <label class="mb-0">التاريخ</label>
                   <div class="ml-1 fs-14">{{getDate(createdAt)}}</div>
                 </div>
 
@@ -24,11 +24,11 @@
                   <div class="clearfix">
                     <div class="col-sm-12 p-0 m-t-20 m-b-20">
                       <div class="clearfix d-flex font-weight-500 border-b pb-3">
-                        <div class="col-sm-4 px-0">Product</div>
-                        <div class="col-sm-2 text-right">Price</div>
-                        <div class="col-sm-2 text-right">Quantity</div>
-                        <div class="col-sm-2 text-right">Discount</div>
-                        <div class="col-sm-2 text-right">Amount</div>
+                        <div class="col-sm-4 px-0">المنتج</div>
+                        <div class="col-sm-2 text-right">السعر</div>
+                        <div class="col-sm-2 text-right">الكمية</div>
+                        <div class="col-sm-2 text-right">التخفيض</div>
+                        <div class="col-sm-2 text-right">المقدار</div>
                       </div>
 
                       {{#each products}}
@@ -46,10 +46,10 @@
                         <div class="col-sm-2 p-w-5 text-right">${{subTotal}}</div>
                       </div>
                       <div class="clearfix d-flex border-b p-b-20 font-weight-500">
-                        <div class="col-sm-12 p-w-5 pt-3 text-right">Delivery Charge: <span class="fs-14 ml-2">${{deliveryCharge}}</span></div>
+                        <div class="col-sm-12 p-w-5 pt-3 text-right">رسوم التوصيل: <span class="fs-14 ml-2">${{deliveryCharge}}</span></div>
                       </div>
                       <div class="clearfix d-flex font-weight-500 border-b p-t-20 p-b-20">
-                        <div class="col-sm-12 p-w-5 text-right">Total Price: <span class="fs-14 ml-2">${{totalPrice}}</span></div>
+                        <div class="col-sm-12 p-w-5 text-right">السعر الاجمالي: <span class="fs-14 ml-2">${{totalPrice}}</span></div>
                       </div>
                     </div>
                   </div>

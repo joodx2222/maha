@@ -7,24 +7,24 @@
             <form role="form" id="userForm">
               {{#with item}}
                 <div class="form-group">
-                  <label>Name</label>
+                  <label>الاسم</label>
                   <span class="help"></span>
-                  <input type="text" name="name" class="form-control" placeholder="Name" value="{{profile.name}}" required>
+                  <input type="text" name="name" class="form-control" placeholder="الاسم" value="{{profile.name}}" required>
                 </div>
                 <div class="form-group">
-                  <label>Email</label>
-                  <input type="email" name="email" class="form-control" placeholder="Email" value="{{getEmail emails}}" required>
+                  <label>الايميل</label>
+                  <input type="email" name="email" class="form-control" placeholder="الايميل" value="{{getEmail emails}}" required>
                 </div>
                 <div class="form-group">
-                  <label>Phone Number</label>
-                  <input type="Number" name="mobile" class="form-control" placeholder="Phone Number" value="{{profile.mobile}}" required>
+                  <label>رقم الهاتف</label>
+                  <input type="Number" name="mobile" class="form-control" placeholder="رقم الهاتف" value="{{profile.mobile}}" required>
                 </div>
                 {{#unless _id}}
                   <div class="form-group">
-                    <label>User Type</label>
+                    <label>نوع المستخدم</label>
                     <div class="select-wrapper position-relative">
                       <select name="role" class="form-control text-capitalize" id="userRole" required>
-                        <option value="">Select User Type</option>
+                        <option value="">اختر نوع المستخدم</option>
                         {{#each roleOptions}}
                           {{#if isUserRole _id}}
                             <option value="{{_id}}" selected>{{_id}}</option>
@@ -37,8 +37,8 @@
                   </div>
                 {{/unless}}
                 <div class="form-group p-t-10 d-flex justify-content-end">
-                  <button type="button" class="btn btn-default btn-cancel" data-dismiss="modal">Cancel</button>
-                  <button type="submit" class="btn btn-primary btn-action" id="btnSaveUser">Save</button>
+                  <button type="button" class="btn btn-default btn-cancel" data-dismiss="modal">اغلاق</button>
+                  <button type="submit" class="btn btn-primary btn-action" id="btnSaveUser">حفظ</button>
                 </div>
               {{/with}}
             </form>

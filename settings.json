@@ -27,7 +27,7 @@
   },
   "galaxy.meteor.com": {
     "env": {
-      "MONGO_URL": "mongodb://yementawfeer:gfXMxa5auGYZtcYQL@SG-eugalaxycluster-38731.servers.mongodirector.com:27017,SG-eugalaxycluster-38732.servers.mongodirector.com:27017/yementawfeer-eu-meteorapp-com?replicaSet=RS-eugalaxycluster-0&ssl=true"
+      "MONGO_URL": "mongodb+srv://yemen202:QZNnRjGHzzTa6td@mahacluster.hocvyru.mongodb.net/?retryWrites=true&w=majority"
     }
   }
 }

@@ -19,7 +19,7 @@ Template.login.events({
           document.location.reload(true);
         } else {
           Meteor.logout()
-          return toastr.error('Invalid user')
+          return toastr.error('مستخدم خاطئ')
         }
       }
     })

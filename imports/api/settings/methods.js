@@ -8,7 +8,7 @@ Meteor.methods({
         $set: { value: value }
       })
     } else {
-      throw new Meteor.Error(403, 'Invalid detail')
+      throw new Meteor.Error(403, 'بيانات خاطئة')
     }
   },
   'setDeliveryCharge' (value) {
@@ -17,7 +17,7 @@ Meteor.methods({
         $set: { value: value }
       })
     } else {
-      throw new Meteor.Error(403, 'Invalid detail')
+      throw new Meteor.Error(403, 'بيانات خاطئة')
     }
   },
   'setPrivacyPolicy' (value) {
@@ -26,7 +26,7 @@ Meteor.methods({
         $set: { value: value }
       })
     } else {
-      throw new Meteor.Error(403, 'Invalid detail')
+      throw new Meteor.Error(403, 'بيانات خاطئة')
     }
   },
   'setTermsandConditions' (value) {
@@ -35,7 +35,7 @@ Meteor.methods({
         $set: { value: value }
       })
     } else {
-      throw new Meteor.Error(403, 'Invalid detail')
+      throw new Meteor.Error(403, 'بيانات خاطئة')
     }
   },
 })

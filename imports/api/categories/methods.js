@@ -13,7 +13,7 @@ Meteor.methods({
       if(data.parentId) categoryData.parentId = data.parentId
       return Categories.insert(categoryData)
     } else {
-      throw new Meteor.Error(403, 'Invalid details')
+      throw new Meteor.Error(403, 'بيانات خاطئة')
     }
   },
   'editCategory' (data) {
@@ -28,10 +28,10 @@ Meteor.methods({
           $set: updateData
         })
       } else {
-        throw new Meteor.Error(403, 'Invalid category')
+        throw new Meteor.Error(403, 'خطأ في الصنف')
       }
     } else {
-      throw new Meteor.Error(403, 'Invalid details')
+      throw new Meteor.Error(403, 'بيانات خاطئة')
     }
   },
   'removeCategory' (id) {
@@ -50,15 +50,15 @@ Meteor.methods({
 
         var productsCount = Products.find({ categories: { $in: categoryList } }, { _id: 1 }).count()
         if (productsCount > 0) {
-          throw new Meteor.Error(403, 'This category has products, It can not be delete')
+          throw new Meteor.Error(403, 'الصنف يملك منتجات. لا يمكن الحذف')
         } else {
           return Categories.remove({ _id: { $in: categoryList } })
         }
       } else {
-        throw new Meteor.Error(403, 'Invalid category')
+        throw new Meteor.Error(403, 'خطأ في الصنف')
       }
     } else {
-      throw new Meteor.Error(403, 'Invalid details')
+      throw new Meteor.Error(403, 'بيانات خاطئة')
     }
   }
 })

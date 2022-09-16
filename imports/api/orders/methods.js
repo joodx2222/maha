@@ -17,7 +17,7 @@ Meteor.methods({
   'declineOrder' (id) {
     if (id) {
       const order = Orders.findOne({_id: id})
-      if (!order) throw new Meteor.Error(403, 'Invalid order')
+      if (!order) throw new Meteor.Error(403, 'خطأ في الطلب')
       //
       if(order.status && order.status == 'Placed') {
         function cancelOrder () {
@@ -46,16 +46,16 @@ Meteor.methods({
           return cancelOrder()
         }
       } else {
-        throw new Error('Unable to cancel order')
+        throw new Error('لا يمكن سحب الطلب')
       }
     } else {
-      throw new Meteor.Error(403, 'Invalid details')
+      throw new Meteor.Error(403, 'بيانات خاطئة')
     }
   },
   'deliverOrder' (id) {
     if (id) {
       const order = Orders.findOne({_id: id})
-      if (!order) throw new Meteor.Error(403, 'Invalid order')
+      if (!order) throw new Meteor.Error(403, 'خطأ في الطلب')
       //
       const orderUpdated = Orders.update({_id: order._id}, { $set: { 'status': 'Delivered' } })
       if (orderUpdated) {
@@ -63,8 +63,8 @@ Meteor.methods({
         if (user && user.emails && user.emails.length && user.emails.address) {
           const options = {
             to: user.emails.address,
-            subject: 'Order Delivered',
-						text: "Your order has been delivered to you."
+            subject: 'الطلب قد وصل!',
+						text: "طلبك قد وصل اليك."
           }
           try {
             return Email.send(options)
@@ -75,7 +75,7 @@ Meteor.methods({
       }
       return orderUpdated
     } else {
-      throw new Meteor.Error(403, 'Invalid details')
+      throw new Meteor.Error(403, 'بيانات خاطئة')
     }
   },
   'generateOrderReceiptPDF' (id, windowWidth, windowHeight) {
@@ -147,7 +147,7 @@ Meteor.methods({
 
   		return base64String
     } else {
-      throw new Meteor.Error(403, 'Invalid detail')
+      throw new Meteor.Error(403, 'بيانات خاطئة')
     }
   }
 })

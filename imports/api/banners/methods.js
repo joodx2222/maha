@@ -11,10 +11,10 @@ Meteor.methods({
   },
   'deleteBanner' (id) {
   	if (id) return Banners.remove({_id: id})
-  	else throw new Meteor.Error(403, 'Invalid details')
+  	else throw new Meteor.Error(403, 'بيانات خاطئة')
   },
   'updateBannerVisible' (visible, id) {
     if (_.isBoolean(visible) && id) return Banners.update({_id: id}, {$set: {visible: visible}})
-    else throw new Meteor.Error(403, 'Invalid details')
+    else throw new Meteor.Error(403, 'بيانات خاطئة')
   }
 })

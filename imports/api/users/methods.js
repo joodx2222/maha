@@ -7,7 +7,7 @@ Meteor.methods({
   'addUser' (data) {
     if (data && data.email) {
       const isEmailExists = Meteor.users.findOne({ 'emails.address': data.email })
-      if (isEmailExists) throw new Meteor.Error(403, 'Email already exists')
+      if (isEmailExists) throw new Meteor.Error(403, 'الايميل موجود!')
       //
       const role = data.role || 'customer'
       const userData = {
@@ -23,7 +23,7 @@ Meteor.methods({
       Roles.addUsersToRoles(userId, [role])
       return userId
     } else {
-      throw new Meteor.Error(403, 'Invalid details')
+      throw new Meteor.Error(403, 'بيانات خاطئة')
     }
   },
   'editUser' (data) {
@@ -31,7 +31,7 @@ Meteor.methods({
       const user = Meteor.users.findOne({ _id: data._id })
       if (user) {
         const isEmailExists = Meteor.users.findOne({ _id: { $ne: user._id }, 'emails.address': data.email })
-        if (isEmailExists) throw new Meteor.Error(403, 'Email already exists')
+        if (isEmailExists) throw new Meteor.Error(403, 'الايميل موجود!')
         //
         const updateData = {
           'profile.name': data.name,
@@ -44,10 +44,10 @@ Meteor.methods({
         })
         return userUpdated
       } else {
-        throw new Meteor.Error(403, 'Invalid user')
+        throw new Meteor.Error(403, 'مستخدم خاطئ')
       }
     } else {
-      throw new Meteor.Error(403, 'Invalid details')
+      throw new Meteor.Error(403, 'بيانات خاطئة')
     }
   },
   'removeUser' (id) {
@@ -55,12 +55,12 @@ Meteor.methods({
     if (user && Roles.userIsInRole(user, 'customer')) {
       const ordersCount = Orders.find({userId: user._id}).count()
       if (ordersCount) {
-        throw new Meteor.Error(403, 'Customer having order already, It can not be delete')
+        throw new Meteor.Error(403, 'المستخدم لديه طلب. لا يمكن الحذف')
       } else {
         return Meteor.users.remove({ _id: id })
       }
     } else {
-      throw new Meteor.Error(403, 'Invalid user')
+      throw new Meteor.Error(403, 'مستخدم خاطئ')
     }
   }
 })

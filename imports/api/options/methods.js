@@ -14,7 +14,7 @@ Meteor.methods({
       }
       return optionId
     } else {
-      throw new Meteor.Error(403, 'Invalid details')
+      throw new Meteor.Error(403, 'بيانات خاطئة')
     }
   },
   'editOption' (data) {
@@ -46,10 +46,10 @@ Meteor.methods({
           $set: updateData
         })
       } else {
-        throw new Meteor.Error(403, 'Invalid option')
+        throw new Meteor.Error(403, 'خيار خاطئ')
       }
     } else {
-      throw new Meteor.Error(403, 'Invalid details')
+      throw new Meteor.Error(403, 'بيانات خاطئة')
     }
   },
   'removeOption' (id) {
@@ -69,10 +69,10 @@ Meteor.methods({
           return Options.remove({ _id: id })
         }
       } else {
-        throw new Meteor.Error(403, 'Invalid option')
+        throw new Meteor.Error(403, 'خيار خاطئ')
       }
     } else {
-      throw new Meteor.Error(403, 'Invalid details')
+      throw new Meteor.Error(403, 'بيانات خاطئة')
     }
   }
 })

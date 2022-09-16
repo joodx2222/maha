@@ -12,7 +12,7 @@ Meteor.methods({
       const notificationId = Notifications.insert(notificationData)
       return notificationId
     } else {
-      throw new Meteor.Error(403, 'Invalid details')
+      throw new Meteor.Error(403, 'بيانات خاطئة')
     }
   },
   'editNotification' (data) {
@@ -27,7 +27,7 @@ Meteor.methods({
         return notificationUpdated
 
     } else {
-      throw new Meteor.Error(403, 'Invalid details')
+      throw new Meteor.Error(403, 'بيانات خاطئة')
     }
   }
 })

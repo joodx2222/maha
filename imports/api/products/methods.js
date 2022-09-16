@@ -7,7 +7,7 @@ Meteor.methods({
     if (data && data.name) {
       return Products.insert(data)
     } else {
-      throw new Meteor.Error(403, 'Invalid details')
+      throw new Meteor.Error(403, 'بيانات خاطئة')
     }
   },
   'editProduct' (data) {
@@ -42,10 +42,10 @@ Meteor.methods({
           $set: updateData
         })
       } else {
-        throw new Meteor.Error(403, 'Invalid product')
+        throw new Meteor.Error(403, 'منتج خاطئ')
       }
     } else {
-      throw new Meteor.Error(403, 'Invalid details')
+      throw new Meteor.Error(403, 'بيانات خاطئة')
     }
   },
   'removeProduct' (id) {
@@ -55,10 +55,10 @@ Meteor.methods({
         Carts.update({'products.productId': id}, { $pull: { products: { productId: id } } }, { multi: true })
         return Products.remove({ _id: id })
       } else {
-        throw new Meteor.Error(403, 'Invalid product')
+        throw new Meteor.Error(403, 'منتج خاطئ')
       }
     } else {
-      throw new Meteor.Error(403, 'Invalid details')
+      throw new Meteor.Error(403, 'بيانات خاطئة')
     }
   }
 })

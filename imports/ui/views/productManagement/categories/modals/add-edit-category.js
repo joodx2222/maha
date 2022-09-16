@@ -49,7 +49,9 @@ Template.categoryAddEditModal.onCreated(function () {
   }
   self.uploadImgFn = function (uploadType, file, cb) {
     if(uploadType && uploadType == 'awsS3') {
+      console.log("will upload")
       var uploadInstance = new Slingshot.Upload('imageUploads')
+      console.log("uploaded")
       uploadInstance.send(file, function (error, downloadUrl) {
           if (!error) {
             cb && cb(null, downloadUrl)
@@ -151,10 +153,9 @@ Template.categoryAddEditModal.events({
           if(uploadType && uploadType == 'awsS3' && error.error && error.error == 'Invalid directive') toastr.error('Please set awsS3 credentials for upload image using awsS3')
           else toastr.error(error.reason)
         } else {
-          console.log("uploaded successfully")
           if(res && uploadType && uploadType == 'awsS3') formData.photo = res
           else if(res && res._downloadRoute && res._collectionName && res._id && res.extension) formData.photo = `${Meteor.absoluteUrl() + res._downloadRoute.substring(1)}/${res._collectionName}/${res._id}/original/${res._id}.${res.extension}`
-          // template.addEditFn(formData)
+          template.addEditFn(formData)
         }
       })
 

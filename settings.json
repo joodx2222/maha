@@ -1,14 +1,14 @@
 {
   "public": {
-    "uploadType": "fileSystem"
+    "uploadType": "awsS3"
   },
   "aws": {
-    "accessKeyId": "",
-    "secretAccessKey": ""
+    "accessKeyId": "AKIAWGEWCP5OT6YITHUC",
+    "secretAccessKey": "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"
   },
   "awsS3": {
-    "region": "",
-    "bucket": ""
+    "region": "us-west-1",
+    "bucket": "mahabucketstorage"
   },
   "stripe": {
     "secretKey": ""
@@ -17,5 +17,17 @@
     "apiUrl": "https://api.sandbox.paypal.com",
     "accessKeyId": "",
     "secretAccessKey": ""
+  },
+  "packages": {
+    "mongo": {
+      "options": {
+        "tlsAllowInvalidCertificates": true
+      }
+    }
+  },
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "mongodb+srv://yemen202:QZNnRjGHzzTa6td@mahacluster.hocvyru.mongodb.net/?retryWrites=true&w=majority"
+    }
   }
 }

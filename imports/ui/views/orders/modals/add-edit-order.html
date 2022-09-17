@@ -36,20 +36,20 @@
                         <div class="col-sm-4 p-0 text-truncate">{{getProductName(productId)}}</div>
                         <div class="col-sm-2 p-w-5 text-right">${{price}}</div>
                         <div class="col-sm-2 p-w-5 text-right">{{quantity}}</div>
-                        <div class="col-sm-2 p-w-5 text-right">${{discount}}</div>
-                        <div class="col-sm-2 p-w-5 text-right">${{sellPrice}}</div>
+                        <div class="col-sm-2 p-w-5 text-right">{{discount}}YR</div>
+                        <div class="col-sm-2 p-w-5 text-right">{{sellPrice}}YR</div>
                       </div>
                       {{/each}}
 
                       <div class="clearfix d-flex font-weight-bold border-t p-t-20 mt-3 fs-14">
-                        <div class="col-sm-10 p-w-5 text-right">{{#if totalDiscount}}${{totalDiscount}}{{/if}}</div>
-                        <div class="col-sm-2 p-w-5 text-right">${{subTotal}}</div>
+                        <div class="col-sm-10 p-w-5 text-right">{{#if totalDiscount}}{{totalDiscount}}YR{{/if}}</div>
+                        <div class="col-sm-2 p-w-5 text-right">{{subTotal}}YR</div>
                       </div>
                       <div class="clearfix d-flex border-b p-b-20 font-weight-500">
-                        <div class="col-sm-12 p-w-5 pt-3 text-right">رسوم التوصيل: <span class="fs-14 ml-2">${{deliveryCharge}}</span></div>
+                        <div class="col-sm-12 p-w-5 pt-3 text-right">رسوم التوصيل: <span class="fs-14 ml-2">{{deliveryCharge}}YR</span></div>
                       </div>
                       <div class="clearfix d-flex font-weight-500 border-b p-t-20 p-b-20">
-                        <div class="col-sm-12 p-w-5 text-right">السعر الاجمالي: <span class="fs-14 ml-2">${{totalPrice}}</span></div>
+                        <div class="col-sm-12 p-w-5 text-right">السعر الاجمالي: <span class="fs-14 ml-2">{{totalPrice}}YR</span></div>
                       </div>
                     </div>
                   </div>

@@ -108,7 +108,7 @@ Template.categoryAddEditModal.helpers({
       const r = new RegExp(searchText.trim(), 'i')
             categories = _.filter(categories, (category) => r.test(category.parentName))
     }
-    categories.unshift({ parentName: '--- None ---' })
+    categories.unshift({ parentName: '--- ليس هناك ---' })
     return categories
   }
 })

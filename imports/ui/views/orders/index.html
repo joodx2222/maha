@@ -21,7 +21,17 @@
               <select name="status" class="form-control" id="filterStatus">
                 <option value="">كل حالات الطلبات</option>
                 {{#each statusList}}
-                  <option value="{{this}}">{{this}}</option>
+                  <option value="{{this}}">
+                    {{#if $eq status 'Placed'}}
+                    جديدة
+                    {{/if}}
+                    {{#if $eq status 'Delivered'}}
+                    تم التوصيل
+                    {{/if}}
+                    {{#if $eq status 'Cancelled'}}
+                    ملغاة
+                    {{/if}}
+                  </option>
                 {{/each}}
               </select>
             </div>
@@ -58,14 +68,24 @@
                     <span>{{email}}</span>
                   </td>
                   <td>
-                    <span>${{totalPrice}}</span>
+                    <span>{{totalPrice}}YR</span>
                   </td>
                   <td>
                     <span>{{getDate(createdAt)}}</span>
                   </td>
                   <td>
                     <span class="{{#if $eq status 'Placed'}}text-warning{{/if}}
-                    {{#if $eq status 'Cancelled'}}text-danger{{/if}}">{{status}}</span>
+                    {{#if $eq status 'Cancelled'}}text-danger{{/if}}">
+                   {{#if $eq status 'Placed'}}
+                    جديدة
+                    {{/if}}
+                    {{#if $eq status 'Delivered'}}
+                    تم التوصيل
+                    {{/if}}
+                    {{#if $eq status 'Cancelled'}}
+                    ملغاة
+                    {{/if}}
+                    </span>
                   </td>
                   <td>
                     {{#if $eq status 'Placed'}}

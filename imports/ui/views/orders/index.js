@@ -112,7 +112,7 @@ Template.orders.events({
         if (error) {
           return toastr.error(error.reason)
         } else {
-          return toastr.success('Order cancelled Successfully')
+          return toastr.success('تم الالغاء بنجاح')
         }
       })
     })
@@ -134,7 +134,7 @@ Template.orders.events({
         Meteor.call('deliverOrder', order._id, (error, result) => {
           if (error) return toastr.error(error.reason)
           else {
-            return toastr.success('Order delivered Successfully')
+            return toastr.success('تم التوصيل بنجاح')
           }
         })
       }

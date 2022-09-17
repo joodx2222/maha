@@ -32,7 +32,7 @@ Template.registerHelper('filterChange', function (tableId) {
         }
         if(hide && !$(`#${tableId}EmptyMsg`).length) {
           const totalColumn = $(`#${tableId}`).find('thead tr:first th').length
-          $(`#${tableId} > tbody`).append(`<tr id=${tableId}EmptyMsg class='d-table-row'><td align='center' colspan=${totalColumn}>No record found</td></tr>`)
+          $(`#${tableId} > tbody`).append(`<tr id=${tableId}EmptyMsg class='d-table-row'><td align='center' colspan=${totalColumn}>ليس هنالك بيانات</td></tr>`)
         } else if(!hide && $(`#${tableId}EmptyMsg`).length) $(`#${tableId}EmptyMsg`).remove()
   		}
     })

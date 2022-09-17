@@ -22,13 +22,13 @@
                 <option value="">كل حالات الطلبات</option>
                 {{#each statusList}}
                   <option value="{{this}}">
-                    {{#if $eq status 'Placed'}}
+                    {{#if $eq this 'Placed'}}
                     جديدة
                     {{/if}}
-                    {{#if $eq status 'Delivered'}}
+                    {{#if $eq this 'Delivered'}}
                     تم التوصيل
                     {{/if}}
-                    {{#if $eq status 'Cancelled'}}
+                    {{#if $eq this 'Cancelled'}}
                     ملغاة
                     {{/if}}
                   </option>

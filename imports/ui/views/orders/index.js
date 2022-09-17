@@ -99,12 +99,12 @@ Template.orders.events({
   'click .btn-decline' (event, template) {
     const order = this
     sweetAlert({
-      title: 'Are you sure?',
+      title: 'هل انت متأكد؟',
       type: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#de4436',
-      confirmButtonText: 'Yes',
-      cancelButtonText: 'Cancel',
+      confirmButtonText: 'نعم',
+      cancelButtonText: 'لا',
       closeOnConfirm: true,
       html: false
     }, (isConfirm) => {
@@ -121,12 +121,12 @@ Template.orders.events({
     event.preventDefault()
     const order = this
     sweetAlert({
-      title: 'Are you sure?',
+      title: 'هل انت متأكد؟',
       type: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#1ab394',
-      confirmButtonText: 'Yes',
-      cancelButtonText: 'Cancel',
+      confirmButtonText: 'نعم',
+      cancelButtonText: 'لا',
       closeOnConfirm: true,
       html: false
     }, (isConfirm) => {

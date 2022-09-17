@@ -21,13 +21,13 @@ Template.privacyAddEditModal.events({
       Meteor.call('setPrivacyPolicy', policy, (error, result) => {
         if (error) return toastr.error(error.reason)
         else {
-          toastr.success('Privacy policy updated successfully')
+          toastr.success('العملية تمت بنجاح')
           $('#privacyAddEditModal').modal('hide')
         }
       })
       $('#privacyAddEditModal').removeClass('process')
     } else {
-      return toastr.error('Please enter privacy policy')
+      return toastr.error('بيانات خاطئة')
     }
   }
 })

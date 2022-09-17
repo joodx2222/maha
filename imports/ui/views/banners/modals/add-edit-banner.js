@@ -78,14 +78,14 @@ Template.bannerAddEditModal.events({
             $('#bannerAddEditModal').removeClass('process')
             if (error) toastr.error(error.reason)
             else {
-              toastr.success('Banner added successfully')
+              toastr.success('العملية تمت بنجاح')
               document.getElementById("bannerForm").reset()
               $('#bannerAddEditModal').modal('hide')
             }
           })
         }
       })
-    } else return toastr.error("Image required")
+    } else return toastr.error("الرجاء إدخال صورة")
   },
   'hidden.bs.modal #bannerAddEditModal' (event, instance) {
     instance.uploadedImage.set('')

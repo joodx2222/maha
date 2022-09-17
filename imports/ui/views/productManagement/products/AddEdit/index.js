@@ -78,16 +78,16 @@ Template.productAddEdit.onCreated(function () {
 
   self.validateFn = function (formData) {
     if(!formData.name) {
-      toastr.error('Please enter product name')
+      toastr.error('الرجاء إدخال اسم المنتج')
       return false
     } else if(!formData.price) {
-      toastr.error('Please enter price')
+      toastr.error('لرجاء إدخال السعر')
       return false
     } else if(!formData.quantity) {
-      toastr.error('Please enter quantity')
+      toastr.error('لرجاء إدخال الكمية')
       return false
     } else if(formData.categories.length <= 0) {
-      toastr.error('Please select category')
+      toastr.error('لرجاء إدخال الصنف')
       return false
     }
     return true
@@ -99,7 +99,7 @@ Template.productAddEdit.onCreated(function () {
       $("#btnSaveProduct").attr("disabled", false);
       if (error) toastr.error(error.reason)
       else {
-        toastr.success(formData._id ? 'Product updated successfully' : 'Product added successfully')
+        toastr.success('العملية تمت بنجاح')
         self.resetProductForm()
         FlowRouter.go('/products')
       }
@@ -346,7 +346,7 @@ Template.productAddEdit.events({
               options.push({ optionValueId: optionValues[i].optionValueId, quantity: optionValues[i].quantity || 0, price: optionValues[i].price || 0, pricePrefix: optionValues[i].pricePrefix })
             } else {
               const opValue = OptionValues.findOne({ _id: optionValues[i].optionValueId })
-              return toastr.error(`Price must be less than than the special price in Option value - ${opValue && opValue.value ? opValue.value : ``}`)
+              return toastr.error(` السعر يجب أن يكون أقل أو يساوي السعر المميز - ${opValue && opValue.value ? opValue.value : ``}`)
             }
           }
         }

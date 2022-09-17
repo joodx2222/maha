@@ -39,12 +39,12 @@ Template.options.events({
   'click .btn-remove' (event, template) {
     event.preventDefault()
     sweetAlert({
-      title: 'Would you like to delete this option?',
+      title: 'هل انت متأكد من الحذف؟',
       type: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#de4436',
-      confirmButtonText: 'Yes',
-      cancelButtonText: 'Cancel',
+      confirmButtonText: 'نعم',
+      cancelButtonText: 'لا',
       closeOnConfirm: true,
       html: false
     }, (isConfirm) => {
@@ -53,7 +53,7 @@ Template.options.events({
           if (error && error != null) {
             return toastr.error(error.reason);
           } else {
-            toastr.success("Option deleted successfully");
+            toastr.success("العملية تمت بنجاح");
             Meteor.defer(function() {
               $('.footable').trigger('footable_initialize');
             });

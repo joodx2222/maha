@@ -162,7 +162,7 @@ Template.categoryAddEditModal.events({
     } else if (template.uploadedImage.get()) {
       template.addEditFn(formData)
     } else {
-      return toastr.error("Image required")
+      return toastr.error("الرجاء إدخال صورة")
     }
   },
   'change #categoryImage'(event, instance) {

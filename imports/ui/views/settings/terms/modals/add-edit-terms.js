@@ -21,13 +21,13 @@ Template.termsAddEditModal.events({
       Meteor.call('setTermsandConditions', policy, (error, result) => {
         if (error) return toastr.error(error.reason)
         else {
-          toastr.success('Terms & conditions updated successfully')
+          toastr.success('العملية تمت بنجاح')
           $('#termsAddEditModal').modal('hide')
         }
       })
       $('#termsAddEditModal').removeClass('process')
     } else {
-      return toastr.error('Please enter terms & conditions')
+      return toastr.error('بيانات خاطئة')
     }
   }
 })

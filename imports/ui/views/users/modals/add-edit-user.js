@@ -27,7 +27,7 @@ Template.userAddEditModal.events({
       formData[field.name] = field.value
     })
     //
-    if(formData && formData.mobile && !formData.mobile.match(/^\d{10}$/)) return toastr.error('Please enter valid phone number')
+    if(formData && formData.mobile && !formData.mobile.match(/^\d{10}$/)) return toastr.error('الرجاءإدخال رقم هاتف صحيح')
     if (template.data && template.data.item && template.data.item._id) formData._id = template.data.item._id
     $("#btnSaveUser").attr('disabled', true)
     //
@@ -36,8 +36,8 @@ Template.userAddEditModal.events({
       $("#btnSaveUser").attr('disabled', false)
       if (error) toastr.error(error.reason)
       else {
-        if (formData._id) toastr.success('User updated successfully')
-        else toastr.success('User added successfully')
+        if (formData._id) toastr.success('العملية تمت بنجاح')
+        else toastr.success('العملية تمت بنجاح')
         $('#userAddEditModal').modal('hide')
       }
     })

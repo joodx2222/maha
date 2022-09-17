@@ -37,12 +37,12 @@ Template.banners.events({
   'click .btn-remove' (event, instance) {
       event.preventDefault();
       sweetAlert({
-          title: 'Would you like to delete this banner?',
+          title: 'هل انت متأكد من الحذف؟',
           type: 'warning',
           showCancelButton: true,
           confirmButtonColor: '#de4436',
-          confirmButtonText: 'Yes',
-          cancelButtonText: 'Cancel',
+          confirmButtonText: 'نعم',
+          cancelButtonText: 'لا',
           closeOnConfirm: true,
           html: false
       }, (isConfirm) => {
@@ -51,7 +51,7 @@ Template.banners.events({
                   if (error && error != null) {
                       return toastr.error(error.reason);
                   } else {
-                      toastr.success("Banner deleted successfully");
+                      toastr.success("العملية تمت بنجاح");
                       Meteor.defer(function() {
                           $('.footable').trigger('footable_initialize');
                       });
@@ -66,7 +66,7 @@ Template.banners.events({
       Meteor.call('updateBannerVisible', visible, this._id, (error, result) => {
           if (error && error != null) return toastr.error(error.reason);
           else {
-              toastr.success("Banner updated successfully");
+              toastr.success("العملية تمت بنجاح");
               Meteor.defer(function() {
                   $('.footable').trigger('footable_initialize');
               });

@@ -27,8 +27,8 @@ Template.notificationAddEditModal.events({
       $("#btnSaveNotification").attr('disabled', false)
       if (error) toastr.error(error.reason)
       else {
-        if (formData._id) toastr.success('Notification updated successfully')
-        else toastr.success('Notification added successfully')
+        if (formData._id) toastr.success('العملية تمت بنجاح')
+        else toastr.success('العملية تمت بنجاح')
         $('#notificationForm').trigger("reset");
         $('#notificationAddEditModal').modal('hide')
       }

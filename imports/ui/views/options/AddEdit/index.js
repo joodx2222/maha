@@ -74,12 +74,12 @@ Template.optionAddEdit.events({
         $("#btnSaveOption").attr('disabled', false)
         if (error) toastr.error(error.reason)
         else {
-          toastr.success(optionId ? 'Option updated successfully' : 'Option added successfully')
+          toastr.success('العملية تمت بنجاح')
           FlowRouter.go('/options')
         }
       })
     } else {
-      return toastr.error('Option Values required!')
+      return toastr.error('بيانات خاطئة')
     }
   },
   'click .btn-add' (event, template) {
@@ -96,7 +96,7 @@ Template.optionAddEdit.events({
       if(optionValues[index]._id) {
         const productCount = Products.find({ 'options.optionValueId': optionValues[index]._id }, { _id: 1 }).count()
         if(productCount > 0) {
-          return toastr.error('This option value cannot be deleted as it is currently assigned to products!')
+          return toastr.error('لا يمكن الحذف! لأن الخيار تستخدمه منتجات')
         } else {
           optionValues.splice(index, 1)
           template.optionValues.set(optionValues)
